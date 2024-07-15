@@ -292,15 +292,16 @@ a:hover {
 
 @media screen and (max-width: 1020px) {
 
-    /* .kanji{
+    .kanji{
     display: flex;
     justify-content: center;
     align-items: center;
     width: 1px;
-    height: 10px;
-    margin-left: 710px;
+    height: 1px;
+    margin-left: 200px;
     padding-bottom: 350px;
-   } */
+        
+    }
 
     .container {
         flex-direction: column;
