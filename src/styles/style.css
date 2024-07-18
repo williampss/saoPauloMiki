@@ -14,6 +14,7 @@ body {
     margin: 0px;
     background: linear-gradient(109.6deg, rgb(6, 2, 2) 32.4%, rgb(137, 30, 47) 98.8%);
     color: white;
+    overflow-x: hidden;
 }
 
 header {
@@ -58,21 +59,13 @@ p {
     align-items: center;
 }
 
-.container>p {
-    display: table-cell;
-    padding-top: 0px;
-    margin-top: 0px;
-    margin-left: 30px;
-    line-height: 50px;
+.container > p {
+    margin-left: 1em; /* Em vez de 30px, use unidades mais flexíveis */
 }
 
-.container>img {
-    display: table-cell;
-    float: left;
-    background-position: top center;
-    margin-left: 0px;
-    margin-right: 20px;
-    width: 200vh;
+.container > img {
+    max-width: 100%;
+    height: auto;
 }
 
 #primeiro_par {
@@ -290,7 +283,15 @@ a:hover {
     padding: 7px;
 }
 
-@media screen and (max-width: 1020px) {
+@media screen and (max-width: 1120px) {
+
+    body{
+        overflow-x: hidden;
+    }
+
+    header{
+        overflow-x: hidden;
+    }
 
     .kanji{
     display: flex;
@@ -300,15 +301,15 @@ a:hover {
     height: 1px;
     margin-left: 200px;
     padding-bottom: 350px;
-        
     }
 
     .container {
         flex-direction: column;
     }
 
-    #quarto_par {
-        flex-direction: column;
+    .container > img {
+        max-width: 10%;
+        height: auto;
     }
 
     #oracao p {
@@ -336,5 +337,9 @@ a:hover {
     }
     #link{
         margin-left: 250px;
+    }
+    picture{
+        justify-content: center;
+        display: flex;
     }
 }
