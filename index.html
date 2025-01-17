@@ -1,189 +1,52 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>São Paulo Miki</title>
-    <link rel="shortcut icon" href="imagens/Dapino-Religion-People-Church.512.ico" type="image/x-icon">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-    <link rel="stylesheet" href="src/styles/style.css">
-    <link rel="stylesheet" href="src/styles/android.css">
+
+    <title>Gerador de Números</title>
 </head>
-
 <body>
-    <header>
-        <h1>São Paulo Miki</h1>
-    </header>
-    <div class="kanji">
-        <img src="src/imagens/kanji.png" alt="">
+    <div class="container">
+        <h2> Gerador de Números </h2>
+        <div class= "input-group">
+            <div class="input-field">
+                <label for="min">Min:</label>
+                <input id="min" type="number" name="min">
+            </div>
+            
+            <div class="input-field">
+                <label for="max">Máx:</label>
+                <input id="max" type="number" name="max">
+            </div>
+        </div>
+
+        <button id="generate">Gerar</button>
+
+        <div id="result">
+            <span>
+                00
+            </span>
+        </div>
     </div>
 
-    <section id="primeiro_par">
-        <p>Foi através do trabalho evangelizador de São Francisco Xavier que o Japão tomou conhecimento do cristianismo,
-            entre 1549 e 1551. A semente frutificou e, apenas algumas décadas depois, já havia pelo menos trezentos mil
-            cristãos no Império do sol nascente. Mas se a catequese obteve êxito não foi somente pelo árduo, sério e
-            respeitoso trabalho dos jesuítas em solo japonês. Foi também graças à coragem dos catequistas locais, como
-            Paulo Miki e seus jovens companheiros.</p>
-    </section>
-    <section id="segundo_par">
-        <h2>Quem foi São Paulo Miki?</h2>
-        <div class="container">
-            <p>
-                Paulo Miki nasceu em 1564, era filho de pais ricos e foi educado no colégio jesuíta em Anziquiama, no
-                Japão. A convivência do colégio logo despertou em Paulo o desejo de se juntar à Companhia de Jesus e
-                assim o fez, tornando-se um eloquente pregador. Ele porém, não pôde ser ordenado sacerdote no tempo
-                correto porque não havia um bispo na região de Fusai. Mas isso não impediu que Paulo Miki continuasse
-                sua pregação. Posteriormente tornou-se o primeiro sacerdote jesuíta em sua pátria, conquistando inúmeras
-                conversões com humildade e paciência.
-            </p>
-            <div class="saoPauloMiki">
-                    <img src="src/imagens/saoPauloMiki.png" alt="São Paulo Miki">
-            </div>
+    <script>
+        const button = document.getElementById('generate');
 
-        </div>
-    </section>
+        button.addEventListener('click', function() {
+            const min = parseInt(document.getElementById('min').value);
+            const max = parseInt(document.getElementById('max').value);
 
-    <section id="terceiro_par" class="alinhamento">
+            let result = Math.floor(Math.random() * (max - min + 1 )) + min;
 
-        <h2>Como Morreu?</h2>
+            if (isNaN(result)) {
+                result = 'Valor inválido';
+            }
 
-        <div class="container" id="three">
-            <picture>
-                
-                <img src="src/imagens/Group 221Pmartirio (1).png" alt="Crucificação">
-            </picture>
-
-            <p>
-                Paciência, essa que não era virtude do imperador Toyotomi Hideyoshi. Ele era simpatizante do catolicismo
-                mas, de uma hora para outra, se tornou seu feroz opositor. Por causa da conquista da Coréia, o Japão
-                rompeu com a Espanha em particular e com o Ocidente em geral, motivando uma perseguição contra todos os
-                cristãos. Inclusive perseguindo alguns missionários franciscanos espanhóis que tinham chegado ao Japão
-                através das Filipinas e sido bem recebidos pelo Imperador.
-                <br>
-                <br>
-                Os católicos foram expulsos do país, mas muitos resistiram e ficaram. Só que a repressão não demorou.
-                Primeiro foram presos seis franciscanos, logo depois Paulo Miki com outros dois jesuítas e dezessete
-                leigos terciários.
-                <br>
-                <br>
-                Os vinte e seis cristãos sofreram terríveis humilhações e torturas públicas. Levados em cortejo de Meaco
-                a Nagasaki foram alvo de violência e zombaria pelas ruas e estradas, enquanto seguiam para o local onde
-                seria executada a pena de morte por crucificação.
-            </p>
-
-        </div>
-
-    </section>
-
-    <section class="alinhamento">
-        <h2>Curiosidades</h2>
-
-        <div id="quarto_par">
-            <p>Antes de morrer, São Paulo Miki ainda discursou dizendo: “...que ninguém poderia duvidar de sua
-                sinceridade e fé e muito menos de que o único caminho para a salvação é através de Jesus Cristo.”
-                <br>
-                <br>
-                Alguns dos companheiros de Paulo Miki eram muito jovens, adolescentes ainda, mas enfrentaram a pena de
-                morte com a mesma coragem do líder. Tomás Cozaki tinha, por exemplo 14 anos ; Antônio 13 e Luis Ibaraki
-                tinha só 11 anos de idade.
-                <br>
-                <br>
-                Sobre este episódio diz o Cardeal Ratzinger:
-                <br>
-                <br>
-                “Os relatos sobre o martírio dos primeiros cristãos japoneses assemelham-se de maneira surpreendente ao
-                que sabemos sobre as testemunhas da fé da Igreja primitiva.
-                Não havia neles a menor sombra de fanatismo. Também não percebemos o menor indício de ódio, nem de
-                desespero, nem qualquer dúvida sobre se não teriam apostado num falso Deus, mas apenas uma enorme
-                certeza e uma serena alegria.”
-            </p>
-            <picture>
-                <img src="src/imagens/imagePriest.png" alt="imagePriest">
-            </picture>
-        </div>
-    </section>
-
-    <section id="quinto_par" class="alinhamento">
-        <h2>O que aconteceu com os outros católicos após o incidente?</h2>
-        <p>
-            Os crentes se dispersaram para escapar dos massacres e um bom número deles se estabeleceu ao longo do rio
-            Urakami, nas proximidades de Nagasaki. Lá eles continuaram a viver sua fé, apesar da ausência de padres. A
-            partir do momento em que o Japão se abriu novamente aos europeus, os missionários voltaram e as igrejas
-            voltaram a ser construídas, inclusive em Nagasaki, a poucos quilômetros da comunidade cristã clandestina.
-            Ela havia perdido todo contato com a Igreja Católica, mas guardava preciosamente três critérios de
-            reconhecimento recebidos dos ancestrais: “Quando a Igreja voltar ao Japão, vocês a reconhecerão por três
-            sinais: os padres não são casados, haverá uma imagem de Maria e esta Igreja obedecerá ao papa-sama, isto é,
-            ao Bispo de Roma”. E foi assim que aconteceu dois séculos e meio depois, quando os cristãos do Império do
-            sol nascente puderam se reencontrar com sua Santa Mãe, a Igreja.
-        </p>
-    </section>
-
-    <section id="sexto_part" class="alinhamento">
-        <h2>Quando foi Canonizado?</h2>
-
-        <p>
-            Elevação sobre a qual os vinte e seis heróis de Jesus Cristo receberam o martírio pela crucificação em
-            fevereiro de 1597 ficou conhecida como Monte dos Mártires. Paulo Miki e seus companheiros foram canonizados
-            pelo Papa Pio IX, em 1862.
-        </p>
-
-        <p>
-            A data de celebração de São Paulo Miki e seus companheiros é dia 06 de Fevereiro, dedicado a esses bravos
-            mártires que entregaram inteiramente seu amor a Cristo até o fim.
-        </p>
-    </section>
-
-    <section id="oracao">
-        <h2>Oração de São Paulo Miki</h2>
-
-        <p>
-            Ó Deus, força dos santos, que em Nagasáki chamastes à verdadeira vida São Paulo Miki e seus companheiros
-            pelo martírio da cruz, concedei-nos, por sua intercessão, perseverar até a morte na fé que professamos. Por
-            nosso Senhor Jesus Cristo, vosso Filho, na unidade do Espírito Santo.
-            <br>
-            Amém!
-        </p>
-    </section>
-
-    <footer>
-        <div class="contain">
-            <div class="footer-content">
-                <div id="contato">
-                    <h3>Contatos</h3>
-                    <p>Whatsapp Otávio: (11) 96440-6076</p>
-                    <p>Whatsapp William: (11) 99777-6290</p>
-                </div>
-            </div>
-            <div class="footer-content">
-                <div id="link">
-                    <h3>Links</h3>
-                </div>
-                <ul class="list">
-                    <li><a href="https://github.com/eid6n" target="_blank">Github Otávio</a></li>
-                    <li><a href="https://github.com/williampss" target="_blank">Github William</a></li>
-                    <li><a href="https://www.instagram.com/servos_sl/" target="_blank">Servos do altar</a></li>
-                    <li><a href="https://www.instagram.com/par.saolucas/" target="_blank">Paróquia São Lucas</a></li>
-                </ul>
-            </div>
-            <div class="social-icons">
-                <h3>Siga-nos</h3>
-                <ul class="list">
-                    <li><a href="https://www.instagram.com/mhj.17/" target="_blank"><i class="fab fa-instagram"></i>
-                            Cordenador Murilo</a></li>
-                    <li><a href="https://www.instagram.com/_alex.nir/" target="_blank"><i class="fab fa-instagram"></i>
-                            Cordenador Alex</a></li>
-                    <li><a href="https://www.instagram.com/otavio4588/" target="_blank"><i class="fab fa-instagram"></i>
-                            Carlos Otávio</a></li>
-                    <li><a href="https://www.instagram.com/wp_santos_/" target="_blank"><i class="fab fa-instagram"></i>
-                            William Patricio</a></li>
-                </ul>
-            </div>
-        </div>
-    </footer>
-    <div class="bottom-bar">
-        <p>&copy; 2024 your company. All rights reserved</p>
-    </div>
+            document.querySelector('#result > span').textContent = result;
+            
+        });
+    </script>
+    
 </body>
-
-</html>
